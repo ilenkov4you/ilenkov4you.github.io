@@ -4,7 +4,7 @@
 
 ## Links
 
-- [Personal website](__SITE_URL__/): about, book, talks, ventures, media, contact
+- [Personal website](https://ilenkov4you.github.io/): about, book, talks, ventures, media, contact
 - [LinkedIn](https://www.linkedin.com/in/dmitriiilenkov/)
 - [pmclub](https://pmclub.pro/en)
 - [P3.express course](https://p3express.com/course)
