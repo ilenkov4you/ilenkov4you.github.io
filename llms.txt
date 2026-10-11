@@ -1,0 +1,10 @@
+# Dmitrii Ilenkov
+
+> Author, TEDx speaker and entrepreneur based in Belgrade, Serbia. Co-founder of pmclub, an online school for project and product managers with more than 30,000 students. Co-author, with Valeria Ilenkova, of "Keep It Simple! Project Management with P3.express" (Bombora, 2026, in Russian; ISBN 978-5-04-228544-8). Accredited P3.express trainer; reviewer of the PMBOK Guide, 7th and 8th editions.
+
+## Links
+
+- [Personal website](__SITE_URL__/): about, book, talks, ventures, media, contact
+- [LinkedIn](https://www.linkedin.com/in/dmitriiilenkov/)
+- [pmclub](https://pmclub.pro/en)
+- [P3.express course](https://p3express.com/course)

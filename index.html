@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dmitrii Ilenkov · Author, TEDx speaker, entrepreneur</title>
+<meta name="description" content="Dmitrii Ilenkov is an author, TEDx speaker and entrepreneur in Belgrade. Co-founder of pmclub and co-author of Keep It Simple! Project Management with P3.express.">
+<link rel="canonical" href="__SITE_URL__/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#F7F7F9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1014" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Dmitrii Ilenkov">
+<meta property="og:description" content="Dmitrii Ilenkov is an author, TEDx speaker and entrepreneur in Belgrade. Co-founder of pmclub and co-author of Keep It Simple! Project Management with P3.express.">
+<meta property="og:url" content="__SITE_URL__/">
+<meta property="og:image" content="__SITE_URL__/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Portrait of Dmitrii Ilenkov">
+<meta property="profile:first_name" content="Dmitrii">
+<meta property="profile:last_name" content="Ilenkov">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@300..700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "#person",
+      "name": "Dmitrii Ilenkov",
+      "url": "__SITE_URL__/",
+      "image": "__SITE_URL__/portrait.jpg",
+      "alternateName": ["Дмитрий Ильенков", "Dmitry Ilenkov", "Dmitry Ilienkov"],
+      "jobTitle": "Author, speaker and entrepreneur",
+      "description": "Author, TEDx speaker and entrepreneur. Co-founder of pmclub and co-author of a book on the P3.express project management method.",
+      "homeLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
+      "knowsAbout": ["Project management", "P3.express", "Simplicity in work", "Team dynamics", "Cognitive biases"],
+      "hasCredential": ["PMP", "PRINCE2 Foundation", "P3.express Practitioner"],
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Financial University under the Government of the Russian Federation" },
+      "founder": { "@id": "#pmclub" },
+      "sameAs": [
+        "https://www.linkedin.com/in/dmitriiilenkov/",
+        "https://pmclub.pro/en/dmitrii-ilenkov",
+        "https://t.me/Ilenkov",
+        "https://medium.com/@dmitryilienkov",
+        "https://vc.ru/u/91198-dmitriy-ilenkov",
+        "https://rb.ru/author/ilyenkov/",
+        "https://www.youtube.com/@cowperwood87",
+        "https://www.facebook.com/dmitry.ilienkov",
+        "https://www.instagram.com/ilenkov_dmitry/",
+        "https://www.threads.net/@ilenkov_dmitry",
+        "https://scholar.google.ru/citations?user=0neNjrkAAAAJ"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "#pmclub",
+      "name": "pmclub",
+      "url": "https://pmclub.pro",
+      "foundingDate": "2015",
+      "founder": [{ "@id": "#person" }, { "@type": "Person", "name": "Valeria Ilenkova" }]
+    },
+    {
+      "@type": "Book",
+      "name": "Не усложняй! Управление проектами по методу P3.express",
+      "alternateName": "Keep It Simple! Project Management with P3.express",
+      "author": [{ "@id": "#person" }, { "@type": "Person", "name": "Valeria Ilenkova" }],
+      "publisher": { "@type": "Organization", "name": "Bombora" },
+      "datePublished": "2026",
+      "inLanguage": "ru",
+      "numberOfPages": 256,
+      "isbn": "978-5-04-228544-8"
+    }
+  ]
+}
+</script>
+<style>
+/* Layout: one reading column; on wide screens each section label sits in a narrow left rail, like an index card. */
+:root {
+  /* PMCLUB 2026 palette: pmclub blue, white, black */
+  --paper: #F7F7F9;
+  --ink: #0F0F0F;
+  --muted: #5F6169;
+  --rule: #E3E4E9;
+  --accent: #3169FF;      /* pmclub blue: button and large marks */
+  --accent-ink: #1F4FD6;  /* darker pmclub blue for small text */
+  --accent-soft: #F4F7FF;
+  --on-accent: #FFFFFF;
+  /* PMCLUB brand guideline 2026: Onest for all communications */
+  --display: "Onest", "Helvetica Neue", Arial, sans-serif;
+  --text: "Onest", "Helvetica Neue", Arial, sans-serif;
+  --mono: "Onest", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F1014;
+    --ink: #EDEEF2;
+    --muted: #A2A5AF;
+    --rule: #26272E;
+    --accent: #3169FF;
+    --accent-ink: #8FAEFF;
+    --accent-soft: #141A2C;
+    --on-accent: #FFFFFF;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F1014;
+  --ink: #EDEEF2;
+  --muted: #A2A5AF;
+  --rule: #26272E;
+  --accent: #3169FF;
+  --accent-ink: #8FAEFF;
+  --accent-soft: #141A2C;
+  --on-accent: #FFFFFF;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 66rem;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 5vw, 48px);
+  padding-block: 0 3rem;
+}
+a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { color: var(--accent-ink); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 3px; border-radius: 2px; }
+
+.label {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.tbd { text-decoration: underline dashed var(--muted); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+
+/* Prototype note */
+.note {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  padding-block: 0.9rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  gap: 2rem;
+  padding-block: clamp(2.5rem, 7vw, 5rem) clamp(2.5rem, 6vw, 4rem);
+}
+.hero-text { display: grid; gap: 1.25rem; min-width: 0; }
+.hero h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 7vw, 4.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  margin: 0;
+  text-wrap: balance;
+}
+.intro { margin: 0; max-width: 38rem; color: var(--ink); }
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin-top: 0.5rem;
+}
+.btn {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1rem;
+  background: var(--accent);
+  color: var(--on-accent);
+  text-decoration: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  border: 0;
+}
+.btn:hover { color: var(--on-accent); filter: brightness(1.08); }
+.addr { font-family: var(--mono); font-size: 0.875rem; color: var(--muted); user-select: all; }
+.copy {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  background: none;
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  cursor: pointer;
+}
+.copy:hover { border-color: var(--accent); color: var(--accent); }
+
+.portrait {
+  width: min(100%, 15rem);
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.jump { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; font-size: 0.9375rem; }
+.jump a { color: var(--muted); text-decoration: none; }
+.jump a:hover { color: var(--accent-ink); text-decoration: underline; }
+@media (max-width: 759px) {
+  .portrait { order: -1; width: 100%; max-height: 70vh; object-position: 50% 25%; }
+}
+
+/* Sections */
+.sec {
+  display: grid;
+  gap: 1rem 2.5rem;
+  border-top: 1px solid var(--rule);
+  padding-block: clamp(2.25rem, 5vw, 3.5rem);
+}
+.sec > h2 {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  margin: 0;
+  padding-top: 0.3rem;
+}
+.body { min-width: 0; max-width: 40rem; display: grid; gap: 1.5rem; }
+.body p { margin: 0; }
+h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.3rem;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  margin: 0;
+  text-wrap: balance;
+}
+
+@media (min-width: 760px) {
+  .hero { grid-template-columns: minmax(0, 1fr) 15rem; align-items: end; }
+  .sec { grid-template-columns: 10rem minmax(0, 1fr); }
+}
+
+/* About facts */
+.facts { margin: 0; display: grid; gap: 0.6rem; }
+.facts div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--rule); }
+.facts div:last-child { border-bottom: 0; }
+.facts dt { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding-top: 0.25rem; }
+.facts dd { margin: 0; }
+@media (max-width: 480px) { .facts div { grid-template-columns: 1fr; gap: 0.15rem; } }
+
+/* Book */
+.book-title { font-family: var(--display); font-weight: 500; font-size: clamp(1.5rem, 3.2vw, 2rem); letter-spacing: -0.02em; line-height: 1.15; margin: 0; text-wrap: balance; }
+.book-title .tag { font-size: 0.75rem; vertical-align: middle; }
+.meta { font-family: var(--mono); font-size: 0.8125rem; color: var(--muted); font-variant-numeric: tabular-nums; display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
+.quotes { display: grid; gap: 1.25rem; margin: 0; padding: 0; list-style: none; }
+.quotes blockquote { margin: 0; font-size: 1.125rem; line-height: 1.5; }
+.quotes figcaption { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); margin-top: 0.35rem; }
+.quotes figure { margin: 0; padding-left: 1rem; border-left: 1px solid var(--rule); }
+.rights {
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 1.1rem 1.25rem;
+  display: grid;
+  gap: 0.5rem;
+}
+.rights p { margin: 0; }
+
+/* Talks */
+.log { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.7rem; font-variant-numeric: tabular-nums; }
+.log li { display: grid; grid-template-columns: 3.25rem minmax(0, 1fr); gap: 0.75rem; }
+.log .yr { font-family: var(--mono); font-size: 0.875rem; color: var(--muted); padding-top: 0.1rem; }
+.log .ev { font-family: var(--display); font-weight: 500; font-size: 1rem; }
+.log .tk { display: block; color: var(--muted); font-size: 0.95rem; }
+
+/* Ventures */
+.ventures { display: grid; gap: 1.5rem; }
+@media (min-width: 640px) { .ventures { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+.venture { display: grid; gap: 0.5rem; align-content: start; }
+.venture p { margin: 0; }
+
+/* Media */
+.media { list-style: none; margin: 0; padding: 0; display: grid; }
+.media li { padding-block: 0.85rem; border-top: 1px solid var(--rule); display: grid; gap: 0.2rem; }
+.media li:last-child { border-bottom: 1px solid var(--rule); }
+.media .src { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.tag { font-family: var(--mono); font-size: 0.6875rem; border: 1px solid var(--rule); border-radius: 999px; padding: 0 0.45rem; }
+.media a { font-size: 1.05rem; }
+.muted { color: var(--muted); }
+.buy a { white-space: nowrap; }
+.more { margin-top: -1.5rem; }
+.more summary {
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  padding-block: 0.85rem;
+  width: max-content;
+}
+.more summary::-webkit-details-marker { display: none; }
+.more summary:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.more .when-open { display: none; }
+.more[open] .when-open { display: inline; }
+.more[open] .when-closed { display: none; }
+.more[open] summary { order: 2; }
+.more .media li:first-child { border-top: 0; }
+.more.log-more { margin-top: 0.35rem; }
+.more.log-more summary { padding-block: 0.5rem; }
+.more.log-more .log { padding-top: 0.35rem; }
+
+/* Footer */
+footer.sec .links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+.small { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
+
+@media (prefers-reduced-motion: no-preference) {
+  a, .copy, .btn { transition: color 0.15s ease, border-color 0.15s ease, filter 0.15s ease; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-text">
+      <p class="label">Author · TEDx speaker · Entrepreneur</p>
+      <h1>Dmitrii Ilenkov</h1>
+      <div class="contact">
+        <a class="btn" href="mailto:dailenkov@pmclub.pro">Contact me</a>
+      </div>
+      <nav class="jump" aria-label="On this page">
+        <a href="#about">About</a>
+        <a href="#book">Book</a>
+        <a href="#talks">Talks</a>
+        <a href="#ventures">Ventures</a>
+        <a href="#media">Media</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <img class="portrait" fetchpriority="high" src="portrait.jpg" width="600" height="750" alt="Portrait of Dmitrii Ilenkov">
+  </header>
+
+  <main>
+
+    <section class="sec" id="about" aria-labelledby="h-about">
+      <h2 id="h-about">About</h2>
+      <div class="body">
+        <p>Knowledge is my biggest passion, and I'm lucky to run a business built around gaining, creating and sharing it.</p>
+        <p>My online school, pmclub, has helped more than 30,000 project and product managers sharpen their skills. We teach a minimalist approach to management, and in April 2026 my wife and I put it into a book, <cite>Keep It Simple! Project Management with P3.express</cite> (RU). It has already sold 3,000 print copies.</p>
+        <p>In October 2026 I spoke at TEDxSavski Venac with the talk “P3.express Method: Keep It Simple, Make It Big”.</p>
+        <p>Get in touch if you'd like to talk about the book or invite me onto a podcast or a stage.</p>
+        <p>Outside work, I'm learning Esperanto and playing chess. I write by hand whenever I can, love doodling and read plenty of fiction. I live in Belgrade with my wife, Valeria, who is also my business partner and co-author, and our three cats. The cats do nothing all day, but they're cute, and I love them too.</p>
+        <dl class="facts">
+          <div><dt>Book</dt><dd>Co-author, <cite>Keep It Simple! Project Management with P3.express</cite> (RU), Bombora, 2026</dd></div>
+          <div><dt>Company</dt><dd>Co-founder, pmclub, since 2015</dd></div>
+          <div><dt>Method</dt><dd>Accredited P3.express trainer; Russian translator of micro.P3.express</dd></div>
+        </dl>
+        <details class="more">
+          <summary><span class="when-closed">Show 4 more</span><span class="when-open">Show less</span></summary>
+          <dl class="facts">
+          <div><dt>Standards</dt><dd>Reviewer of the PMBOK Guide, 7th and 8th editions</dd></div>
+          <div><dt>Community</dt><dd>President, PMI Moscow Chapter, 2016–2019</dd></div>
+          <div><dt>Education</dt><dd>Ph.D. in Economics; guest lecturer at HSE University</dd></div>
+          <div><dt>Certified</dt><dd>PMP, PRINCE2 Foundation, P3.express Practitioner</dd></div>
+          </dl>
+        </details>
+      </div>
+    </section>
+
+    <section class="sec" id="book" aria-labelledby="h-book">
+      <h2 id="h-book">Book</h2>
+      <div class="body">
+        <p class="book-title">Keep It Simple! Project Management with P3.express&nbsp;<span class="tag">RU</span></p>
+        <p>P3.express is a minimalist project management method: 33 steps from the first idea to the finished result. The book walks through every step with examples from the authors' own projects and from business history. It also shows how to set up project management in teams that resist PMBOK and Scrum.</p>
+        <p class="meta"><span>Bombora, 2026</span><span>256 pages</span><span>In Russian</span><span>ISBN 978-5-04-228544-8</span></p>
+        <ul class="quotes">
+          <li><figure><blockquote>A book that makes project management accessible to everyone.</blockquote><figcaption>Inga Skers, CEO and co-founder, Weeek</figcaption></figure></li>
+          <li><figure><blockquote>A practical guide to bringing order to projects without drowning in terminology, bureaucracy or heavy methodology.</blockquote><figcaption>Roman Murazanov, CEO, Kaiten</figcaption></figure></li>
+          <li><figure><blockquote>P3.express is a tool for bringing order to complex work. For us it became the framework that turned the chaos of change into a clear path to the goal.</blockquote><figcaption>Rustam Aynetdinov, CEO, Skyeng</figcaption></figure></li>
+        </ul>
+        <p class="small">Endorsements translated from Russian.</p>
+        <div class="rights">
+          <p class="label">Rights</p>
+          <p>English and all translation rights are available directly from the authors. Publishers and literary agents, please <a href="mailto:dailenkov@pmclub.pro?subject=Rights%3A%20Keep%20It%20Simple!">email about rights</a>.</p>
+        </div>
+        <p class="muted buy">Read it in Russian: <a href="https://www.litres.ru/book/valeriya-ilenkova/ne-uslozhnyay-upravlenie-proektami-po-metodu-p3-express-73805453/">Litres</a> · <a href="https://www.amazon.com/dp/B0GX2ZYM2W">Amazon</a> · <a href="https://books.yandex.ru/books/ox1FmEmE">Yandex Books</a> · <a href="https://eksmo.ru/book/upravlenie-proektami-metodologiya-p3-express-ITD1461376/">Eksmo</a></p>
+      </div>
+    </section>
+
+    <section class="sec" id="talks" aria-labelledby="h-talks">
+      <h2 id="h-talks">Talks</h2>
+      <div class="body">
+        <p>Keynotes, in-house talks and workshops. In English or Russian, in person or online.</p>
+
+        <div>
+          <p class="label" style="margin: 0 0 0.9rem">Selected stages</p>
+          <ol class="log" reversed>
+            <li><span class="yr">2026</span><span><span class="ev">TEDx Savski Venac, Belgrade</span><span class="tk">P3.express Method: Keep It Simple, Make It Big · <span>video coming soon</span></span></span></li>
+            <li><span class="yr">2026</span><span><span class="ev">School 21, Samarkand</span><span class="tk">NUPP: 6 principles for careers and projects</span></span></li>
+            <li><span class="yr">2026</span><span><span class="ev">New Zeon, Baku</span><span class="tk">Launching P3.express in an IT team</span></span></li>
+            <li><span class="yr">2025</span><span><span class="ev">Agile: Scale &amp; Innovation, Tashkent</span><span class="tk">Managing projects with P3.express</span></span></li>
+            <li><span class="yr">2024</span><span><span class="ev">CodeTalks, Almaty</span><span class="tk"><a href="https://youtu.be/X_pVPTaWw1Y">What to do with hornets in the team?</a>&nbsp;<span class="tag">RU</span></span></span></li>
+            <li><span class="yr">2024</span><span><span class="ev">IT Summer Fest, Serbia</span><span class="tk">Dealing with Team Hornets</span></span></li>
+            <li><span class="yr">2023</span><span><span class="ev">PMI Germany Chapter</span><span class="tk">Blinded by Bias</span></span></li>
+            <li><span class="yr">2022</span><span><span class="ev">P3.express webinar, Spain</span><span class="tk"><a href="https://youtu.be/hICyj3MhdpU">5 key takeaways from P3.express implementation</a></span></span></li>
+            <li><span class="yr">2021</span><span><span class="ev">TeamLead Conf, Moscow</span><span class="tk"><a href="https://www.youtube.com/watch?v=zEghuMXIvcM">How to keep leadership in a team</a>&nbsp;<span class="tag">RU</span></span></span></li>
+          </ol>
+          <details class="more log-more">
+            <summary><span class="when-closed">Show 2 more</span><span class="when-open">Show less</span></summary>
+            <ol class="log">
+            <li><span class="yr">2020</span><span><span class="ev">TeamLead Conf, Moscow</span><span class="tk"><a href="https://www.youtube.com/watch?v=3Sdq3e5LcOI">How to bring order to projects with P3.express</a>&nbsp;<span class="tag">RU</span></span></span></li>
+            <li><span class="yr">2018</span><span><span class="ev">CodeFest</span><span class="tk"><a href="https://www.youtube.com/watch?v=-S6CBt38VGc">Agile and Waterfall: bridges, not walls</a>&nbsp;<span class="tag">RU</span></span></span></li>
+            </ol>
+          </details>
+        </div>
+        <p><a class="btn" href="mailto:dailenkov@pmclub.pro?subject=Speaking%20invitation">Invite me to speak</a></p>
+      </div>
+    </section>
+
+    <section class="sec" id="ventures" aria-labelledby="h-ventures">
+      <h2 id="h-ventures">Ventures</h2>
+      <div class="body">
+        <div class="ventures">
+          <div class="venture">
+            <p class="label">Co-founder · since 2015</p>
+            <h3>pmclub</h3>
+            <p>An online school for practising project and product managers. More than 30,000 students and teams from over 300 companies.</p>
+            <p><a href="https://pmclub.pro/en">pmclub.pro</a></p>
+          </div>
+          <div class="venture">
+            <p class="label">Accredited trainer</p>
+            <h3>P3.express</h3>
+            <p>An open, minimalist project management method with an international certification run by certN, an independent exam institute in Belgium.</p>
+            <p><a href="https://p3express.com/course">Take the P3.express course</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="media" aria-labelledby="h-media">
+      <h2 id="h-media">Media</h2>
+      <div class="body">
+        <ul class="media">
+          <li><span class="src">Podcast · Life &amp; IT Project Management</span><a href="https://youtu.be/sWbCTNpIQQ0">Don't Overcomplicate Project Management: Simplify for Success!</a></li>
+          <li><span class="src">Video · Appfire</span><a href="https://appfire.com/resources/resource-library/videos-webinars/what-are-nearly-universal-principles-of-projects">What are the Nearly Universal Principles of Projects (NUPP)?</a></li>
+          <li><span class="src">Video · Appfire</span><a href="https://appfire.com/resources/resource-library/videos-webinars/what-is-p3-express-how-to-manage-projects">What is P3.express, and how can it help me manage projects more effectively?</a></li>
+          <li><span class="src">Podcast · Unspoken Dots with Ehsan Tarighat</span><a href="https://open.spotify.com/episode/7bKxE39s7RBJA9NVdaynvJ">Episode 1: Dmitrii Ilenkov</a></li>
+        </ul>
+        <details class="more">
+          <summary><span class="when-closed">Show 9 more</span><span class="when-open">Show less</span></summary>
+          <ul class="media">
+          <li><span class="src">Webinar · ProjectManagement.com</span><a href="https://www.projectmanagement.com/videos/586341/ten-ways-to-beat-parkinson-s-law">Ten Ways to Beat Parkinson's Law</a></li>
+          <li><span class="src">Video podcast · Code of Leadership&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=48DpgIscHgU">Don't overcomplicate: project management with Dmitrii Ilenkov</a></li>
+          <li><span class="src">Video podcast · IT Connect&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=BQIVeQU9qxc">Is it worth writing a book in the age of AI?</a></li>
+          <li><span class="src">Video podcast · ITCAST #64&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=E9LYBTqYU0s">I wrote a book about project management</a></li>
+          <li><span class="src">Video podcast · Lawread&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=DqvOb9SN_v0">Copyright doesn't work that way: a writer versus a lawyer</a></li>
+          <li><span class="src">Video podcast · PRODVIZHENTSY&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=PK1ku9er7Ec">Why a personal brand matters, and how it connects to success</a></li>
+          <li><span class="src">Video podcast · Egor Maramygin&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=u4GC_XkhTGA">How to build an effective business: pmclub, project and product management</a></li>
+          <li><span class="src">Article · Habr&nbsp;<span class="tag">RU</span></span><a href="https://habr.com/ru/articles/1029608/">A chapter from Keep It Simple!</a></li>
+          <li><span class="src">Article · RBC Pro&nbsp;<span class="tag">RU</span></span><a href="https://pro.rbc.ru/demo/65b0918b9a7947332fa1e020">The path of simplification: how the project manager's job is changing</a></li>
+          </ul>
+        </details>      </div>
+    </section>
+
+  </main>
+
+  <footer class="sec" id="contact" aria-labelledby="h-contact">
+    <h2 id="h-contact">Contact</h2>
+    <div class="body">
+      <p>The quickest way to reach me is email: <span class="addr">dailenkov@pmclub.pro</span></p>
+      <p class="links">
+        <a href="https://www.linkedin.com/in/dmitriiilenkov/">LinkedIn</a>
+        <a href="https://t.me/Ilenkov">Telegram</a>
+        <a href="https://p3express.com/course">My P3.express course</a>
+      </p>
+      <p class="small">© 2026 Dmitrii Ilenkov</p>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
