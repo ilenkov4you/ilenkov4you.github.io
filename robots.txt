@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ilenkov4you.github.io/sitemap.xml
+Sitemap: https://ilenkov.com/sitemap.xml
