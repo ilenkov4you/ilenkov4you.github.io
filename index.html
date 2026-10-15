@@ -211,9 +211,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .portrait {
   width: min(100%, 15rem);
   height: auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 4px;
+  object-position: 50% 22%;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--rule);
   display: block;
 }
 
@@ -221,7 +223,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .jump a { color: var(--muted); text-decoration: none; }
 .jump a:hover { color: var(--accent-ink); text-decoration: underline; }
 @media (max-width: 759px) {
-  .portrait { order: -1; width: 100%; max-height: 70vh; object-position: 50% 25%; }
+  /* Phone: small round avatar to the right of the name */
+  .hero { grid-template-columns: minmax(0, 1fr) 96px; align-items: start; gap: 1.25rem; }
+  .hero-text { grid-column: 1; grid-row: 1; }
+  .portrait { grid-column: 2; grid-row: 1; width: 96px; margin-top: 2.4rem; }
 }
 
 /* Sections */
