@@ -7,8 +7,7 @@
 <meta name="description" content="Dmitrii Ilenkov is an author, TEDx speaker and entrepreneur in Belgrade. Co-founder of pmclub and co-author of Keep It Simple! Project Management with P3.express.">
 <link rel="canonical" href="https://ilenkov.com/">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="theme-color" content="#F7F7F9" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0F1014" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#141414">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Dmitrii Ilenkov">
 <meta property="og:description" content="Dmitrii Ilenkov is an author, TEDx speaker and entrepreneur in Belgrade. Co-founder of pmclub and co-author of Keep It Simple! Project Management with P3.express.">
@@ -25,7 +24,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@300..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&display=swap">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -82,426 +81,367 @@
 }
 </script>
 <style>
-/* Layout: one reading column; on wide screens each section label sits in a narrow left rail, like an index card. */
+/* Layout: after Mondrian. The page is a black ground; every block is a flat colour plane separated by 12px black lines. Light theme only. */
 :root {
-  /* PMCLUB 2026 palette: pmclub blue, white, black */
-  --paper: #F7F7F9;
-  --ink: #0F0F0F;
-  --muted: #5F6169;
-  --rule: #E3E4E9;
-  --accent: #3169FF;      /* pmclub blue: button and large marks */
-  --accent-ink: #1F4FD6;  /* darker pmclub blue for small text */
-  --accent-soft: #F4F7FF;
-  --on-accent: #FFFFFF;
-  /* PMCLUB brand guideline 2026: Onest for all communications */
-  --display: "Onest", "Helvetica Neue", Arial, sans-serif;
-  --text: "Onest", "Helvetica Neue", Arial, sans-serif;
-  --mono: "Onest", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+  --line: #141414;   /* grid lines and text */
+  --paper: #F3F0E8;  /* off-white planes */
+  --red: #C8291F;
+  --yellow: #F2C230;
+  --blue: #1F4CA0;
+  --on-colour: #FFFFFF;
+  --gap: 12px;       /* line thickness */
+  --pad: clamp(24px, 4vw, 56px);
+  --font: "Archivo", "Helvetica Neue", Arial, sans-serif;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #0F1014;
-    --ink: #EDEEF2;
-    --muted: #A2A5AF;
-    --rule: #26272E;
-    --accent: #3169FF;
-    --accent-ink: #8FAEFF;
-    --accent-soft: #141A2C;
-    --on-accent: #FFFFFF;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --paper: #0F1014;
-  --ink: #EDEEF2;
-  --muted: #A2A5AF;
-  --rule: #26272E;
-  --accent: #3169FF;
-  --accent-ink: #8FAEFF;
-  --accent-soft: #141A2C;
-  --on-accent: #FFFFFF;
-  color-scheme: dark;
-}
-
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--line); }
 body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--text);
-  font-size: 1.0625rem;
-  line-height: 1.6;
+  margin: 0;
+  background: var(--line);
+  color: var(--line);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
-.wrap {
-  max-width: 66rem;
-  margin-inline: auto;
-  padding-inline: clamp(16px, 5vw, 48px);
-  padding-block: 0 3rem;
-}
-a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
-a:hover { color: var(--accent-ink); }
-a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 3px; border-radius: 2px; }
+img { max-width: 100%; }
+p { margin: 0; }
+a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 2px; }
+a:hover { color: var(--red); }
+.red a:hover, .blue a:hover { color: var(--on-colour); text-decoration-thickness: 4px; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.red a:focus-visible, .blue a:focus-visible { outline-color: var(--yellow); }
 
-.label {
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.tbd { text-decoration: underline dashed var(--muted); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+/* Grid */
+.page { min-height: 100vh; padding: var(--gap); display: flex; flex-direction: column; gap: var(--gap); }
+.row { display: flex; flex-wrap: wrap; gap: var(--gap); }
+.stack { min-width: 0; display: flex; flex-direction: column; gap: var(--gap); }
+.cell { min-width: 0; background: var(--paper); padding: var(--pad); display: flex; flex-direction: column; gap: 18px; }
+.red { background: var(--red); color: var(--on-colour); }
+.blue { background: var(--blue); color: var(--on-colour); }
+.yellow { background: var(--yellow); }
+.plain { background: var(--paper); }
 
-/* Prototype note */
-.note {
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--muted);
-  padding-block: 0.9rem;
-  border-bottom: 1px solid var(--rule);
-}
+/* Type */
+h1 { margin: 0; font-weight: 900; font-size: clamp(52px, 9vw, 132px); line-height: 0.88; letter-spacing: -0.04em; text-transform: uppercase; }
+h2 { margin: 0; font-weight: 900; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; }
+h3 { margin: 0; font-weight: 900; font-size: 40px; line-height: 1.05; letter-spacing: -0.03em; }
+.label { font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; }
+.lead { font-size: 26px; line-height: 1.3; font-weight: 500; letter-spacing: -0.01em; text-wrap: balance; }
+.small { font-size: 13px; }
+.tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; line-height: 1.4; border: 2px solid currentColor; padding: 0 5px; vertical-align: 0.15em; }
+
 
 /* Hero */
-.hero {
-  display: grid;
-  gap: 2rem;
-  padding-block: clamp(2.5rem, 7vw, 5rem) clamp(2.5rem, 6vw, 4rem);
-}
-.hero-text { display: grid; gap: 1.25rem; min-width: 0; }
-.hero h1 {
-  font-family: var(--display);
-  font-weight: 400;
-  font-size: clamp(2.5rem, 7vw, 4.75rem);
-  line-height: 1.02;
-  letter-spacing: -0.035em;
-  margin: 0;
-  text-wrap: balance;
-}
-.intro { margin: 0; max-width: 38rem; color: var(--ink); }
-.contact {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem 1rem;
-  margin-top: 0.5rem;
-}
-.btn {
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: 1rem;
-  background: var(--accent);
-  color: var(--on-accent);
-  text-decoration: none;
-  padding: 0.7rem 1.2rem;
-  border-radius: 999px;
-  border: 0;
-}
-.btn:hover { color: var(--on-accent); filter: brightness(1.08); }
-.addr { font-family: var(--mono); font-size: 0.875rem; color: var(--muted); user-select: all; }
-.copy {
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  background: none;
-  color: var(--ink);
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  padding: 0.35rem 0.8rem;
-  cursor: pointer;
-}
-.copy:hover { border-color: var(--accent); color: var(--accent); }
+.hero-text { flex: 3 1 520px; justify-content: space-between; gap: 40px; min-height: 520px; }
+.hero-actions { display: flex; flex-direction: column; gap: 24px; }
+.btn { display: inline-block; background: var(--line); color: var(--paper); text-decoration: none; font-weight: 700; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; padding: 16px 26px; }
+.btn:hover { color: var(--yellow); }
+.jump { display: flex; flex-wrap: wrap; gap: 6px 22px; font-weight: 500; font-size: 15px; }
+.hero-portrait { flex: 1 1 300px; }
+.portrait-frame { flex: 1 1 auto; min-height: 380px; overflow: hidden; background: var(--paper); }
+.portrait { display: block; width: 100%; height: 100%; min-height: 380px; object-fit: cover; object-position: 50% 30%; }
+.hero-red { flex: 0 0 132px; }
+.hero-side { flex: 0 1 104px; min-width: 64px; }
+.hero-side .yellow { flex: 2 1 auto; min-height: 40px; }
+.hero-side .plain { flex: 1 1 auto; min-height: 24px; }
 
-.portrait {
-  width: min(100%, 15rem);
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: 50% 22%;
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px var(--rule);
-  display: block;
-}
-
-.jump { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; font-size: 0.9375rem; }
-.jump a { color: var(--muted); text-decoration: none; }
-.jump a:hover { color: var(--accent-ink); text-decoration: underline; }
-@media (max-width: 759px) {
-  /* Phone: small round avatar to the right of the name */
-  .hero { grid-template-columns: minmax(0, 1fr) 96px; align-items: start; gap: 1.25rem; }
-  .hero-text { grid-column: 1; grid-row: 1; }
-  .portrait { grid-column: 2; grid-row: 1; width: 96px; margin-top: 2.4rem; }
-}
-
-/* Sections */
-.sec {
-  display: grid;
-  gap: 1rem 2.5rem;
-  border-top: 1px solid var(--rule);
-  padding-block: clamp(2.25rem, 5vw, 3.5rem);
-}
-.sec > h2 {
-  font-family: var(--mono);
-  font-weight: 500;
-  font-size: 0.8125rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent-ink);
-  margin: 0;
-  padding-top: 0.3rem;
-}
-.body { min-width: 0; max-width: 40rem; display: grid; gap: 1.5rem; }
-.body p { margin: 0; }
-h3 {
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: 1.3rem;
-  letter-spacing: -0.015em;
-  line-height: 1.25;
-  margin: 0;
-  text-wrap: balance;
-}
-
-@media (min-width: 760px) {
-  .hero { grid-template-columns: minmax(0, 1fr) 15rem; align-items: end; }
-  .sec { grid-template-columns: 10rem minmax(0, 1fr); }
-}
-
-/* About facts */
-.facts { margin: 0; display: grid; gap: 0.6rem; }
-.facts div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--rule); }
-.facts div:last-child { border-bottom: 0; }
-.facts dt { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding-top: 0.25rem; }
+/* About */
+.about-mark { flex: 0 1 72px; min-width: 48px; min-height: 48px; }
+.about-text { flex: 3 1 540px; }
+.about-text h2 { margin-bottom: 8px; }
+.facts { flex: 2 1 340px; margin: 0; gap: 0; }
+.facts dl { margin: 0; display: flex; flex-direction: column; }
+.facts dl div { display: flex; flex-direction: column; gap: 4px; padding-block: 16px; border-bottom: 3px solid var(--line); }
+.facts dl div:first-child { padding-top: 0; }
+.facts dt { font-weight: 900; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; }
 .facts dd { margin: 0; }
-@media (max-width: 480px) { .facts div { grid-template-columns: 1fr; gap: 0.15rem; } }
+.facts .more dl div:first-child { padding-top: 16px; }
 
-/* Book */
-.book-title { font-family: var(--display); font-weight: 500; font-size: clamp(1.5rem, 3.2vw, 2rem); letter-spacing: -0.02em; line-height: 1.15; margin: 0; text-wrap: balance; }
-.book-title .tag { font-size: 0.75rem; vertical-align: middle; }
-.meta { font-family: var(--mono); font-size: 0.8125rem; color: var(--muted); font-variant-numeric: tabular-nums; display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
-.quotes { display: grid; gap: 1.25rem; margin: 0; padding: 0; list-style: none; }
-.quotes blockquote { margin: 0; font-size: 1.125rem; line-height: 1.5; }
-.quotes figcaption { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); margin-top: 0.35rem; }
-.quotes figure { margin: 0; padding-left: 1rem; border-left: 1px solid var(--rule); }
-.rights {
-  background: var(--accent-soft);
-  border: 1px solid var(--accent);
-  border-radius: 4px;
-  padding: 1.1rem 1.25rem;
-  display: grid;
-  gap: 0.5rem;
-}
-.rights p { margin: 0; }
-
-/* Talks */
-.log { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.7rem; font-variant-numeric: tabular-nums; }
-.log li { display: grid; grid-template-columns: 3.25rem minmax(0, 1fr); gap: 0.75rem; }
-.log .yr { font-family: var(--mono); font-size: 0.875rem; color: var(--muted); padding-top: 0.1rem; }
-.log .ev { font-family: var(--display); font-weight: 500; font-size: 1rem; }
-.log .tk { display: block; color: var(--muted); font-size: 0.95rem; }
-
-/* Ventures */
-.ventures { display: grid; gap: 1.5rem; }
-@media (min-width: 640px) { .ventures { grid-template-columns: 1fr 1fr; gap: 2rem; } }
-.venture { display: grid; gap: 0.5rem; align-content: start; }
-.venture p { margin: 0; }
-
-/* Media */
-.media { list-style: none; margin: 0; padding: 0; display: grid; }
-.media li { padding-block: 0.85rem; border-top: 1px solid var(--rule); display: grid; gap: 0.2rem; }
-.media li:last-child { border-bottom: 1px solid var(--rule); }
-.media .src { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
-.tag { font-family: var(--mono); font-size: 0.6875rem; border: 1px solid var(--rule); border-radius: 999px; padding: 0 0.45rem; }
-.media a { font-size: 1.05rem; }
-.muted { color: var(--muted); }
-.buy a { white-space: nowrap; }
-.more { margin-top: -1.5rem; }
-.more summary {
-  list-style: none;
-  cursor: pointer;
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent-ink);
-  padding-block: 0.85rem;
-  width: max-content;
-}
+/* Show more */
+.more summary { list-style: none; cursor: pointer; width: max-content; padding-block: 14px 0; font-weight: 900; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: underline; text-underline-offset: 0.3em; text-decoration-thickness: 2px; }
 .more summary::-webkit-details-marker { display: none; }
-.more summary:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.more summary:hover { color: var(--red); }
 .more .when-open { display: none; }
 .more[open] .when-open { display: inline; }
 .more[open] .when-closed { display: none; }
+.more[open] { display: flex; flex-direction: column; }
 .more[open] summary { order: 2; }
-.more .media li:first-child { border-top: 0; }
-.more.log-more { margin-top: 0.35rem; }
-.more.log-more summary { padding-block: 0.5rem; }
-.more.log-more .log { padding-top: 0.35rem; }
 
-/* Footer */
-footer.sec .links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
-.small { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
+/* Book */
+.book-cover { flex: 2 1 400px; justify-content: space-between; gap: 40px; min-height: 460px; }
+.book-title { font-weight: 900; font-size: clamp(32px, 4.4vw, 60px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase; text-wrap: balance; }
+.book-title .tag { font-size: 14px; letter-spacing: 0.06em; vertical-align: 0.6em; }
+.meta { display: flex; flex-wrap: wrap; gap: 4px 18px; font-weight: 500; font-size: 14px; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
+.book-side { flex: 3 1 520px; }
+.book-text { gap: 22px; }
+.quotes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 22px; }
+.quotes figure { margin: 0; }
+.quotes blockquote { margin: 0; font-size: 22px; line-height: 1.35; font-weight: 500; }
+.quotes figcaption { margin-top: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.buy { font-size: 15px; }
+.buy a { white-space: nowrap; }
+.rights { flex: 3 1 320px; padding: 28px 32px; gap: 8px; }
+.rights-pad { flex: 1 1 120px; min-height: 80px; }
+
+/* Talks */
+.talks-text { flex: 4 1 620px; gap: 22px; }
+.log { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; font-variant-numeric: tabular-nums; }
+.log li { display: flex; gap: 20px; padding-block: 14px; border-top: 3px solid var(--line); }
+.log > li:last-child { border-bottom: 3px solid var(--line); }
+.more .log li:first-child { border-top: 0; }
+.log .yr { flex: 0 0 52px; font-weight: 900; }
+.log .what { flex: 1 1 auto; min-width: 0; }
+.log .ev { display: block; font-weight: 700; }
+.talks-side { flex: 1 1 260px; }
+.invite { flex: 2 1 auto; min-height: 220px; padding: 32px; display: flex; align-items: flex-end; text-decoration: none; font-weight: 900; font-size: 34px; line-height: 0.95; text-transform: uppercase; letter-spacing: -0.02em; }
+.invite:hover { text-decoration: underline; }
+.talks-side .plain { flex: 1 1 auto; min-height: 120px; }
+.talks-side .yellow { flex: 0 0 72px; }
+
+/* Ventures */
+.ventures-label { flex: 0 1 220px; min-width: 0; margin: 0; padding: 32px; background: var(--paper); }
+.venture { flex: 2 1 360px; gap: 10px; padding: clamp(24px, 4vw, 48px); }
+
+/* Media */
+.media-text { flex: 5 1 640px; }
+.media { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.media li { padding-block: 14px; border-top: 3px solid var(--line); display: flex; flex-direction: column; gap: 2px; }
+.media > li:last-child { border-bottom: 3px solid var(--line); }
+.more .media li:first-child { border-top: 0; }
+.media .src { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.media a { font-size: 19px; }
+.media-side { flex: 1 1 160px; }
+.media-side .plain { flex: 1 1 auto; min-height: 96px; }
+.media-side .blue { flex: 2 1 auto; min-height: 120px; }
+
+/* Contact */
+.contact-main { flex: 3 1 520px; }
+.addr { font-weight: 900; font-size: clamp(26px, 4vw, 52px); line-height: 1.05; letter-spacing: -0.03em; overflow-wrap: anywhere; user-select: all; }
+.contact-links { flex: 2 1 320px; justify-content: space-between; gap: 24px; }
+.links { display: flex; flex-wrap: wrap; gap: 8px 22px; font-weight: 500; }
+.contact-mark { flex: 0 1 96px; min-width: 64px; min-height: 64px; }
+
+/* Phones: decorative columns turn into horizontal strips so no plane sits alone in a narrow column */
+@media (max-width: 640px) {
+  .hero-text { min-height: 0; }
+  .hero-side, .about-mark, .contact-mark { flex: 1 1 100%; min-height: 0; }
+  .hero-side { flex-direction: row; height: 48px; }
+  .hero-side .yellow { flex: 2 1 0; }
+  .hero-side .plain { flex: 1 1 0; }
+  .about-mark, .contact-mark { height: 36px; }
+  .hero-red { flex-basis: 64px; }
+  .book-cover { min-height: 0; }
+  .invite { min-height: 140px; font-size: 30px; }
+  .talks-side .plain { display: none; }
+  .talks-side .yellow { flex-basis: 36px; }
+  .ventures-label { flex-basis: 100%; padding: 20px 24px; }
+  .media-side { flex-direction: row; height: 48px; }
+  .media-side .plain, .media-side .blue { min-height: 0; flex-basis: 0; }
+  .rights-pad { display: none; }
+  .addr { font-size: 6.4vw; }
+  .lead { font-size: 22px; }
+  .quotes blockquote { font-size: 19px; }
+  h3 { font-size: 34px; }
+  .log li { gap: 14px; }
+  .log .yr { flex-basis: 44px; }
+}
 
 @media (prefers-reduced-motion: no-preference) {
-  a, .copy, .btn { transition: color 0.15s ease, border-color 0.15s ease, filter 0.15s ease; }
+  a, summary, .btn { transition: color 0.15s ease, text-decoration-thickness 0.15s ease; }
 }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="page">
 
-  <header class="hero">
-    <div class="hero-text">
+  <header class="row">
+    <div class="cell hero-text">
       <p class="label">Author · TEDx speaker · Entrepreneur</p>
-      <h1>Dmitrii Ilenkov</h1>
-      <div class="contact">
-        <a class="btn" href="mailto:dmitrii@ilenkov.com">Contact me</a>
+      <h1>Dmitrii<br>Ilenkov</h1>
+      <div class="hero-actions">
+        <div><a class="btn" href="mailto:dmitrii@ilenkov.com">Contact me</a></div>
+        <nav class="jump" aria-label="On this page">
+          <a href="#about">About</a>
+          <a href="#book">Book</a>
+          <a href="#talks">Talks</a>
+          <a href="#ventures">Ventures</a>
+          <a href="#media">Media</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
-      <nav class="jump" aria-label="On this page">
-        <a href="#about">About</a>
-        <a href="#book">Book</a>
-        <a href="#talks">Talks</a>
-        <a href="#ventures">Ventures</a>
-        <a href="#media">Media</a>
-        <a href="#contact">Contact</a>
-      </nav>
     </div>
-    <img class="portrait" fetchpriority="high" src="portrait.jpg" width="600" height="750" alt="Portrait of Dmitrii Ilenkov">
+    <div class="stack hero-portrait">
+      <div class="portrait-frame">
+        <img class="portrait" fetchpriority="high" src="portrait.jpg" width="600" height="750" alt="Portrait of Dmitrii Ilenkov">
+      </div>
+      <div class="red hero-red"></div>
+    </div>
+    <div class="stack hero-side" aria-hidden="true">
+      <div class="yellow"></div>
+      <div class="plain"></div>
+    </div>
   </header>
 
-  <main>
+  <main class="stack">
 
-    <section class="sec" id="about" aria-labelledby="h-about">
-      <h2 id="h-about">About</h2>
-      <div class="body">
-        <p>Knowledge is my biggest passion, and I'm lucky to run a business built around gaining, creating and sharing it.</p>
+    <section class="row" id="about" aria-labelledby="h-about">
+      <div class="blue about-mark" aria-hidden="true"></div>
+      <div class="cell about-text">
+        <h2 id="h-about">About</h2>
+        <p class="lead">Knowledge is my biggest passion, and I'm lucky to run a business built around gaining, creating and sharing it.</p>
         <p>My online school, pmclub, has helped more than 30,000 project and product managers sharpen their skills. We teach a minimalist approach to management, and in April 2026 my wife and I put it into a book, <cite>Keep It Simple! Project Management with P3.express</cite> (RU). It has already sold 3,000 print copies.</p>
         <p>In October 2026 I spoke at TEDxSavski Venac with the talk “P3.express Method: Keep It Simple, Make It Big”.</p>
         <p>Get in touch if you'd like to talk about the book or invite me onto a podcast or a stage.</p>
         <p>Outside work, I'm learning Esperanto and playing chess. I write by hand whenever I can, love doodling and read plenty of fiction. I live in Belgrade with my wife, Valeria, who is also my business partner and co-author, and our three cats. The cats do nothing all day, but they're cute, and I love them too.</p>
-        <dl class="facts">
+      </div>
+      <div class="cell facts">
+        <dl>
           <div><dt>Book</dt><dd>Co-author, <cite>Keep It Simple! Project Management with P3.express</cite> (RU), Bombora, 2026</dd></div>
           <div><dt>Company</dt><dd>Co-founder, pmclub, since 2015</dd></div>
           <div><dt>Method</dt><dd>Accredited P3.express trainer; Russian translator of micro.P3.express</dd></div>
         </dl>
         <details class="more">
           <summary><span class="when-closed">Show 4 more</span><span class="when-open">Show less</span></summary>
-          <dl class="facts">
-          <div><dt>Standards</dt><dd>Reviewer of the PMBOK Guide, 7th and 8th editions</dd></div>
-          <div><dt>Community</dt><dd>President, PMI Moscow Chapter, 2016–2019</dd></div>
-          <div><dt>Education</dt><dd>Ph.D. in Economics; guest lecturer at HSE University</dd></div>
-          <div><dt>Certified</dt><dd>PMP, PRINCE2 Foundation, P3.express Practitioner</dd></div>
+          <dl>
+            <div><dt>Standards</dt><dd>Reviewer of the PMBOK Guide, 7th and 8th editions</dd></div>
+            <div><dt>Community</dt><dd>President, PMI Moscow Chapter, 2016–2019</dd></div>
+            <div><dt>Education</dt><dd>Ph.D. in Economics; guest lecturer at HSE University</dd></div>
+            <div><dt>Certified</dt><dd>PMP, PRINCE2 Foundation, P3.express Practitioner</dd></div>
           </dl>
         </details>
       </div>
     </section>
 
-    <section class="sec" id="book" aria-labelledby="h-book">
-      <h2 id="h-book">Book</h2>
-      <div class="body">
+    <section class="row" id="book" aria-labelledby="h-book">
+      <div class="cell blue book-cover">
+        <h2 id="h-book">Book</h2>
         <p class="book-title">Keep It Simple! Project Management with P3.express&nbsp;<span class="tag">RU</span></p>
-        <p>P3.express is a minimalist project management method: 33 steps from the first idea to the finished result. The book walks through every step with examples from the authors' own projects and from business history. It also shows how to set up project management in teams that resist PMBOK and Scrum.</p>
         <p class="meta"><span>Bombora, 2026</span><span>256 pages</span><span>In Russian</span><span>ISBN 978-5-04-228544-8</span></p>
-        <ul class="quotes">
-          <li><figure><blockquote>A book that makes project management accessible to everyone.</blockquote><figcaption>Inga Skers, CEO and co-founder, Weeek</figcaption></figure></li>
-          <li><figure><blockquote>A practical guide to bringing order to projects without drowning in terminology, bureaucracy or heavy methodology.</blockquote><figcaption>Roman Murazanov, CEO, Kaiten</figcaption></figure></li>
-          <li><figure><blockquote>P3.express is a tool for bringing order to complex work. For us it became the framework that turned the chaos of change into a clear path to the goal.</blockquote><figcaption>Rustam Aynetdinov, CEO, Skyeng</figcaption></figure></li>
-        </ul>
-        <p class="small">Endorsements translated from Russian.</p>
-        <div class="rights">
-          <p class="label">Rights</p>
-          <p>English and all translation rights are available directly from the authors. Publishers and literary agents, please <a href="mailto:dmitrii@ilenkov.com?subject=Rights%3A%20Keep%20It%20Simple!">email about rights</a>.</p>
+      </div>
+      <div class="stack book-side">
+        <div class="cell book-text">
+          <p>P3.express is a minimalist project management method: 33 steps from the first idea to the finished result. The book walks through every step with examples from the authors' own projects and from business history. It also shows how to set up project management in teams that resist PMBOK and Scrum.</p>
+          <ul class="quotes">
+            <li><figure><blockquote>A book that makes project management accessible to everyone.</blockquote><figcaption>Inga Skers, CEO and co-founder, Weeek</figcaption></figure></li>
+            <li><figure><blockquote>A practical guide to bringing order to projects without drowning in terminology, bureaucracy or heavy methodology.</blockquote><figcaption>Roman Murazanov, CEO, Kaiten</figcaption></figure></li>
+            <li><figure><blockquote>P3.express is a tool for bringing order to complex work. For us it became the framework that turned the chaos of change into a clear path to the goal.</blockquote><figcaption>Rustam Aynetdinov, CEO, Skyeng</figcaption></figure></li>
+          </ul>
+          <p class="small">Endorsements translated from Russian.</p>
+          <p class="buy">Read it in Russian: <a href="https://www.litres.ru/book/valeriya-ilenkova/ne-uslozhnyay-upravlenie-proektami-po-metodu-p3-express-73805453/">Litres</a> · <a href="https://www.amazon.com/dp/B0GX2ZYM2W">Amazon</a> · <a href="https://books.yandex.ru/books/ox1FmEmE">Yandex Books</a> · <a href="https://eksmo.ru/book/upravlenie-proektami-metodologiya-p3-express-ITD1461376/">Eksmo</a></p>
         </div>
-        <p class="muted buy">Read it in Russian: <a href="https://www.litres.ru/book/valeriya-ilenkova/ne-uslozhnyay-upravlenie-proektami-po-metodu-p3-express-73805453/">Litres</a> · <a href="https://www.amazon.com/dp/B0GX2ZYM2W">Amazon</a> · <a href="https://books.yandex.ru/books/ox1FmEmE">Yandex Books</a> · <a href="https://eksmo.ru/book/upravlenie-proektami-metodologiya-p3-express-ITD1461376/">Eksmo</a></p>
+        <div class="row">
+          <div class="cell yellow rights">
+            <p class="label">Rights</p>
+            <p>English and all translation rights are available directly from the authors. Publishers and literary agents, please <a href="mailto:dmitrii@ilenkov.com?subject=Rights%3A%20Keep%20It%20Simple!">email about rights</a>.</p>
+          </div>
+          <div class="plain rights-pad" aria-hidden="true"></div>
+        </div>
       </div>
     </section>
 
-    <section class="sec" id="talks" aria-labelledby="h-talks">
-      <h2 id="h-talks">Talks</h2>
-      <div class="body">
+    <section class="row" id="talks" aria-labelledby="h-talks">
+      <div class="cell talks-text">
+        <h2 id="h-talks">Talks</h2>
         <p>Keynotes, in-house talks and workshops. In English or Russian, in person or online.</p>
-
+        <p class="label">Selected stages</p>
         <div>
-          <p class="label" style="margin: 0 0 0.9rem">Selected stages</p>
           <ol class="log" reversed>
-            <li><span class="yr">2026</span><span><span class="ev">TEDx Savski Venac, Belgrade</span><span class="tk">P3.express Method: Keep It Simple, Make It Big · <span>video coming soon</span></span></span></li>
-            <li><span class="yr">2026</span><span><span class="ev">School 21, Samarkand</span><span class="tk">NUPP: 6 principles for careers and projects</span></span></li>
-            <li><span class="yr">2026</span><span><span class="ev">New Zeon, Baku</span><span class="tk">Launching P3.express in an IT team</span></span></li>
-            <li><span class="yr">2025</span><span><span class="ev">Agile: Scale &amp; Innovation, Tashkent</span><span class="tk">Managing projects with P3.express</span></span></li>
-            <li><span class="yr">2024</span><span><span class="ev">CodeTalks, Almaty</span><span class="tk"><a href="https://youtu.be/X_pVPTaWw1Y">What to do with hornets in the team?</a>&nbsp;<span class="tag">RU</span></span></span></li>
-            <li><span class="yr">2024</span><span><span class="ev">IT Summer Fest, Serbia</span><span class="tk">Dealing with Team Hornets</span></span></li>
-            <li><span class="yr">2023</span><span><span class="ev">PMI Germany Chapter</span><span class="tk">Blinded by Bias</span></span></li>
-            <li><span class="yr">2022</span><span><span class="ev">P3.express webinar, Spain</span><span class="tk"><a href="https://youtu.be/hICyj3MhdpU">5 key takeaways from P3.express implementation</a></span></span></li>
-            <li><span class="yr">2021</span><span><span class="ev">TeamLead Conf, Moscow</span><span class="tk"><a href="https://www.youtube.com/watch?v=zEghuMXIvcM">How to keep leadership in a team</a>&nbsp;<span class="tag">RU</span></span></span></li>
+            <li><span class="yr">2026</span><span class="what"><span class="ev">TEDx Savski Venac, Belgrade</span>P3.express Method: Keep It Simple, Make It Big · <span>video coming soon</span></span></li>
+            <li><span class="yr">2026</span><span class="what"><span class="ev">School 21, Samarkand</span>NUPP: 6 principles for careers and projects</span></li>
+            <li><span class="yr">2026</span><span class="what"><span class="ev">New Zeon, Baku</span>Launching P3.express in an IT team</span></li>
+            <li><span class="yr">2025</span><span class="what"><span class="ev">Agile: Scale &amp; Innovation, Tashkent</span>Managing projects with P3.express</span></li>
+            <li><span class="yr">2024</span><span class="what"><span class="ev">CodeTalks, Almaty</span><a href="https://youtu.be/X_pVPTaWw1Y">What to do with hornets in the team?</a>&nbsp;<span class="tag">RU</span></span></li>
+            <li><span class="yr">2024</span><span class="what"><span class="ev">IT Summer Fest, Serbia</span>Dealing with Team Hornets</span></li>
+            <li><span class="yr">2023</span><span class="what"><span class="ev">PMI Germany Chapter</span>Blinded by Bias</span></li>
+            <li><span class="yr">2022</span><span class="what"><span class="ev">P3.express webinar, Spain</span><a href="https://youtu.be/hICyj3MhdpU">5 key takeaways from P3.express implementation</a></span></li>
+            <li><span class="yr">2021</span><span class="what"><span class="ev">TeamLead Conf, Moscow</span><a href="https://www.youtube.com/watch?v=zEghuMXIvcM">How to keep leadership in a team</a>&nbsp;<span class="tag">RU</span></span></li>
           </ol>
-          <details class="more log-more">
+          <details class="more">
             <summary><span class="when-closed">Show 2 more</span><span class="when-open">Show less</span></summary>
             <ol class="log">
-            <li><span class="yr">2020</span><span><span class="ev">TeamLead Conf, Moscow</span><span class="tk"><a href="https://www.youtube.com/watch?v=3Sdq3e5LcOI">How to bring order to projects with P3.express</a>&nbsp;<span class="tag">RU</span></span></span></li>
-            <li><span class="yr">2018</span><span><span class="ev">CodeFest</span><span class="tk"><a href="https://www.youtube.com/watch?v=-S6CBt38VGc">Agile and Waterfall: bridges, not walls</a>&nbsp;<span class="tag">RU</span></span></span></li>
+              <li><span class="yr">2020</span><span class="what"><span class="ev">TeamLead Conf, Moscow</span><a href="https://www.youtube.com/watch?v=3Sdq3e5LcOI">How to bring order to projects with P3.express</a>&nbsp;<span class="tag">RU</span></span></li>
+              <li><span class="yr">2018</span><span class="what"><span class="ev">CodeFest</span><a href="https://www.youtube.com/watch?v=-S6CBt38VGc">Agile and Waterfall: bridges, not walls</a>&nbsp;<span class="tag">RU</span></span></li>
             </ol>
           </details>
         </div>
-        <p><a class="btn" href="mailto:dmitrii@ilenkov.com?subject=Speaking%20invitation">Invite me to speak</a></p>
+      </div>
+      <div class="stack talks-side">
+        <a class="red invite" href="mailto:dmitrii@ilenkov.com?subject=Speaking%20invitation">Invite me to speak</a>
+        <div class="plain" aria-hidden="true"></div>
+        <div class="yellow" aria-hidden="true"></div>
       </div>
     </section>
 
-    <section class="sec" id="ventures" aria-labelledby="h-ventures">
-      <h2 id="h-ventures">Ventures</h2>
-      <div class="body">
-        <div class="ventures">
-          <div class="venture">
-            <p class="label">Co-founder · since 2015</p>
-            <h3>pmclub</h3>
-            <p>An online school for practising project and product managers. More than 30,000 students and teams from over 300 companies.</p>
-            <p><a href="https://pmclub.pro/en">pmclub.pro</a></p>
-          </div>
-          <div class="venture">
-            <p class="label">Accredited trainer</p>
-            <h3>P3.express</h3>
-            <p>An open, minimalist project management method with an international certification run by certN, an independent exam institute in Belgium.</p>
-            <p><a href="https://p3express.com/course">Take the P3.express course</a></p>
-          </div>
+    <section class="row" id="ventures" aria-labelledby="h-ventures">
+      <h2 class="ventures-label" id="h-ventures">Ventures</h2>
+      <div class="cell venture">
+        <p class="label">Co-founder · since 2015</p>
+        <h3>pmclub</h3>
+        <p>An online school for practising project and product managers. More than 30,000 students and teams from over 300 companies.</p>
+        <p><a href="https://pmclub.pro/en">pmclub.pro</a></p>
+      </div>
+      <div class="cell venture">
+        <p class="label">Accredited trainer</p>
+        <h3>P3.express</h3>
+        <p>An open, minimalist project management method with an international certification run by certN, an independent exam institute in Belgium.</p>
+        <p><a href="https://p3express.com/course">Take the P3.express course</a></p>
+      </div>
+    </section>
+
+    <section class="row" id="media" aria-labelledby="h-media">
+      <div class="cell media-text">
+        <h2 id="h-media">Media</h2>
+        <div>
+          <ul class="media">
+            <li><span class="src">Podcast · Life &amp; IT Project Management</span><a href="https://youtu.be/sWbCTNpIQQ0">Don't Overcomplicate Project Management: Simplify for Success!</a></li>
+            <li><span class="src">Video · Appfire</span><a href="https://appfire.com/resources/resource-library/videos-webinars/what-are-nearly-universal-principles-of-projects">What are the Nearly Universal Principles of Projects (NUPP)?</a></li>
+            <li><span class="src">Video · Appfire</span><a href="https://appfire.com/resources/resource-library/videos-webinars/what-is-p3-express-how-to-manage-projects">What is P3.express, and how can it help me manage projects more effectively?</a></li>
+            <li><span class="src">Podcast · Unspoken Dots with Ehsan Tarighat</span><a href="https://open.spotify.com/episode/7bKxE39s7RBJA9NVdaynvJ">Episode 1: Dmitrii Ilenkov</a></li>
+          </ul>
+          <details class="more">
+            <summary><span class="when-closed">Show 9 more</span><span class="when-open">Show less</span></summary>
+            <ul class="media">
+              <li><span class="src">Webinar · ProjectManagement.com</span><a href="https://www.projectmanagement.com/videos/586341/ten-ways-to-beat-parkinson-s-law">Ten Ways to Beat Parkinson's Law</a></li>
+              <li><span class="src">Video podcast · Code of Leadership&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=48DpgIscHgU">Don't overcomplicate: project management with Dmitrii Ilenkov</a></li>
+              <li><span class="src">Video podcast · IT Connect&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=BQIVeQU9qxc">Is it worth writing a book in the age of AI?</a></li>
+              <li><span class="src">Video podcast · ITCAST #64&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=E9LYBTqYU0s">I wrote a book about project management</a></li>
+              <li><span class="src">Video podcast · Lawread&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=DqvOb9SN_v0">Copyright doesn't work that way: a writer versus a lawyer</a></li>
+              <li><span class="src">Video podcast · PRODVIZHENTSY&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=PK1ku9er7Ec">Why a personal brand matters, and how it connects to success</a></li>
+              <li><span class="src">Video podcast · Egor Maramygin&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=u4GC_XkhTGA">How to build an effective business: pmclub, project and product management</a></li>
+              <li><span class="src">Article · Habr&nbsp;<span class="tag">RU</span></span><a href="https://habr.com/ru/articles/1029608/">A chapter from Keep It Simple!</a></li>
+              <li><span class="src">Article · RBC Pro&nbsp;<span class="tag">RU</span></span><a href="https://pro.rbc.ru/demo/65b0918b9a7947332fa1e020">The path of simplification: how the project manager's job is changing</a></li>
+            </ul>
+          </details>
         </div>
       </div>
-    </section>
-
-    <section class="sec" id="media" aria-labelledby="h-media">
-      <h2 id="h-media">Media</h2>
-      <div class="body">
-        <ul class="media">
-          <li><span class="src">Podcast · Life &amp; IT Project Management</span><a href="https://youtu.be/sWbCTNpIQQ0">Don't Overcomplicate Project Management: Simplify for Success!</a></li>
-          <li><span class="src">Video · Appfire</span><a href="https://appfire.com/resources/resource-library/videos-webinars/what-are-nearly-universal-principles-of-projects">What are the Nearly Universal Principles of Projects (NUPP)?</a></li>
-          <li><span class="src">Video · Appfire</span><a href="https://appfire.com/resources/resource-library/videos-webinars/what-is-p3-express-how-to-manage-projects">What is P3.express, and how can it help me manage projects more effectively?</a></li>
-          <li><span class="src">Podcast · Unspoken Dots with Ehsan Tarighat</span><a href="https://open.spotify.com/episode/7bKxE39s7RBJA9NVdaynvJ">Episode 1: Dmitrii Ilenkov</a></li>
-        </ul>
-        <details class="more">
-          <summary><span class="when-closed">Show 9 more</span><span class="when-open">Show less</span></summary>
-          <ul class="media">
-          <li><span class="src">Webinar · ProjectManagement.com</span><a href="https://www.projectmanagement.com/videos/586341/ten-ways-to-beat-parkinson-s-law">Ten Ways to Beat Parkinson's Law</a></li>
-          <li><span class="src">Video podcast · Code of Leadership&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=48DpgIscHgU">Don't overcomplicate: project management with Dmitrii Ilenkov</a></li>
-          <li><span class="src">Video podcast · IT Connect&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=BQIVeQU9qxc">Is it worth writing a book in the age of AI?</a></li>
-          <li><span class="src">Video podcast · ITCAST #64&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=E9LYBTqYU0s">I wrote a book about project management</a></li>
-          <li><span class="src">Video podcast · Lawread&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=DqvOb9SN_v0">Copyright doesn't work that way: a writer versus a lawyer</a></li>
-          <li><span class="src">Video podcast · PRODVIZHENTSY&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=PK1ku9er7Ec">Why a personal brand matters, and how it connects to success</a></li>
-          <li><span class="src">Video podcast · Egor Maramygin&nbsp;<span class="tag">RU</span></span><a href="https://www.youtube.com/watch?v=u4GC_XkhTGA">How to build an effective business: pmclub, project and product management</a></li>
-          <li><span class="src">Article · Habr&nbsp;<span class="tag">RU</span></span><a href="https://habr.com/ru/articles/1029608/">A chapter from Keep It Simple!</a></li>
-          <li><span class="src">Article · RBC Pro&nbsp;<span class="tag">RU</span></span><a href="https://pro.rbc.ru/demo/65b0918b9a7947332fa1e020">The path of simplification: how the project manager's job is changing</a></li>
-          </ul>
-        </details>      </div>
+      <div class="stack media-side" aria-hidden="true">
+        <div class="plain"></div>
+        <div class="blue"></div>
+      </div>
     </section>
 
   </main>
 
-  <footer class="sec" id="contact" aria-labelledby="h-contact">
-    <h2 id="h-contact">Contact</h2>
-    <div class="body">
-      <p>The quickest way to reach me is email: <span class="addr">dmitrii@ilenkov.com</span></p>
+  <footer class="row" id="contact" aria-labelledby="h-contact">
+    <div class="cell red contact-main">
+      <h2 id="h-contact">Contact</h2>
+      <p>The quickest way to reach me is email:</p>
+      <p class="addr">dmitrii@ilenkov.com</p>
+    </div>
+    <div class="cell contact-links">
       <p class="links">
         <a href="https://www.linkedin.com/in/dmitriiilenkov/">LinkedIn</a>
         <a href="https://t.me/Ilenkov">Telegram</a>
         <a href="https://p3express.com/course">My P3.express course</a>
       </p>
-      <p class="small">© 2026 Dmitrii Ilenkov</p>
+      <p class="small">© 2026 Dmitrii Ilenkov · In homage to Piet Mondrian</p>
     </div>
+    <div class="yellow contact-mark" aria-hidden="true"></div>
   </footer>
 
 </div>
+
 </body>
 </html>
