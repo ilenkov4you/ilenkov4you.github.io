@@ -7,7 +7,7 @@
 ## Файлы
 
 - `index.html` — вся страница: разметка, стили и JSON-LD внутри.
-- `portrait.jpg` (600×750), `og-image.jpg` (1200×630), `favicon.ico`, `icon-192.png`, `apple-touch-icon.png`.
+- `portrait.jpg` (600×750), `og-image.jpg` (1200×630), `tedx-stage.jpg` (1600×1066, кадр 921A2297 из фотографий TEDxSavski Venac), `favicon.ico`, `icon-192.png`, `apple-touch-icon.png`.
 - `robots.txt`, `sitemap.xml`, `llms.txt` — для поисковиков и ИИ-ассистентов.
 - `CNAME` и `.nojekyll` не удалять: без них сайт отвалится от домена или соберётся иначе.
 

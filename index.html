@@ -250,7 +250,8 @@ h3 { margin: 0; font-weight: 900; font-size: 40px; line-height: 1.05; letter-spa
 .play::after { content: ""; position: absolute; left: 36px; top: 28px; border-style: solid; border-width: 20px 0 20px 32px; border-color: transparent transparent transparent var(--on-colour); }
 .video > a:hover .play { background: var(--blue); }
 .video > a:focus-visible { outline: 6px solid var(--yellow); outline-offset: -6px; }
-.tedx-media .yellow { flex: 1 1 auto; min-height: 48px; }
+.tedx-photo { position: relative; flex: 1 1 auto; min-height: 180px; overflow: hidden; background: var(--paper); }
+.tedx-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block; }
 .tedx-text { flex: 2 1 340px; }
 .tedx-text blockquote { margin: 0; font-size: 22px; line-height: 1.35; font-weight: 500; }
 .transcript-text { display: flex; flex-direction: column; gap: 12px; padding-top: 14px; font-size: 15px; }
@@ -268,7 +269,7 @@ h3 { margin: 0; font-weight: 900; font-size: 40px; line-height: 1.05; letter-spa
   .hero-tedx .go { font-size: 22px; }
   .play { width: 64px; height: 64px; }
   .play::after { left: 24px; top: 18px; border-width: 14px 0 14px 22px; }
-  .tedx-media .yellow { min-height: 36px; }
+  .tedx-photo { min-height: 200px; }
   .tedx-text blockquote { font-size: 19px; }
   .book-cover { min-height: 0; }
   .invite { min-height: 140px; font-size: 30px; }
@@ -388,7 +389,9 @@ h3 { margin: 0; font-weight: 900; font-size: 40px; line-height: 1.05; letter-spa
             <span class="play" aria-hidden="true"></span>
           </a>
         </div>
-        <div class="yellow" aria-hidden="true"></div>
+        <div class="tedx-photo">
+          <img src="tedx-stage.jpg" width="1600" height="1066" loading="lazy" alt="Dmitrii Ilenkov on stage at TEDxSavski Venac in Belgrade, October 2026, with the audience in the foreground">
+        </div>
       </div>
       <div class="cell tedx-text">
         <h2 id="h-tedx">TEDx talk</h2>
