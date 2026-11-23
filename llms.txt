@@ -2,6 +2,10 @@
 
 > Author, TEDx speaker and entrepreneur based in Belgrade, Serbia. Co-founder of pmclub, an online school for project and product managers with more than 30,000 students. Co-author, with Valeria Ilenkova, of "Keep It Simple! Project Management with P3.express" (Bombora, 2026, in Russian; ISBN 978-5-04-228544-8). Accredited P3.express trainer; reviewer of the PMBOK Guide, 7th and 8th editions.
 
+## TEDx talk
+
+- [Project management: keep it simple](https://www.youtube.com/watch?v=ykUEA_ve8R8): TEDxSavski Venac, Belgrade, October 2026; on the TEDx Talks channel since 12 November 2026; 10 minutes, in English. Why project management should be a skill for everyone, like reading, and the P3.express method in three minutes. Transcript: https://ilenkov.com/#tedx
+
 ## Contact
 
 - Email: dmitrii@ilenkov.com

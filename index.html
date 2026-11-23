@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dmitrii Ilenkov · Author, TEDx speaker, entrepreneur</title>
-<meta name="description" content="Dmitrii Ilenkov is an author, TEDx speaker and entrepreneur in Belgrade. Co-founder of pmclub and co-author of Keep It Simple! Project Management with P3.express.">
+<meta name="description" content="Dmitrii Ilenkov is an author, TEDx speaker and entrepreneur in Belgrade. Co-founder of pmclub and co-author of Keep It Simple! Project Management with P3.express. Watch his TEDx talk “Project management: keep it simple”.">
 <link rel="canonical" href="https://ilenkov.com/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#141414">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Dmitrii Ilenkov">
-<meta property="og:description" content="Dmitrii Ilenkov is an author, TEDx speaker and entrepreneur in Belgrade. Co-founder of pmclub and co-author of Keep It Simple! Project Management with P3.express.">
+<meta property="og:description" content="Dmitrii Ilenkov is an author, TEDx speaker and entrepreneur in Belgrade. Co-founder of pmclub and co-author of Keep It Simple! Project Management with P3.express. Watch his TEDx talk “Project management: keep it simple”.">
 <meta property="og:url" content="https://ilenkov.com/">
 <meta property="og:image" content="https://ilenkov.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -76,6 +76,19 @@
       "inLanguage": "ru",
       "numberOfPages": 256,
       "isbn": "978-5-04-228544-8"
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "#tedx-talk",
+      "name": "Project management: keep it simple | Dmitrii Ilenkov | TEDxSavski Venac",
+      "description": "Project management is not a privilege and not a cult, but a skill everyone needs, like reading. Dmitrii Ilenkov explains why and walks through the P3.express method in three minutes. Recorded at TEDxSavski Venac, Belgrade, in October 2026.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/ykUEA_ve8R8/maxresdefault.jpg",
+      "uploadDate": "2026-11-12T08:06:15-08:00",
+      "duration": "PT10M25S",
+      "inLanguage": "en",
+      "url": "https://www.youtube.com/watch?v=ykUEA_ve8R8",
+      "embedUrl": "https://www.youtube.com/embed/ykUEA_ve8R8",
+      "actor": { "@id": "#person" }
     }
   ]
 }
@@ -110,6 +123,7 @@ p { margin: 0; }
 a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 2px; }
 a:hover { color: var(--red); }
 .red a:hover, .blue a:hover { color: var(--on-colour); text-decoration-thickness: 4px; }
+a.red:hover, a.blue:hover { color: var(--on-colour); }
 a:focus-visible, summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
 .red a:focus-visible, .blue a:focus-visible { outline-color: var(--yellow); }
 
@@ -223,6 +237,24 @@ h3 { margin: 0; font-weight: 900; font-size: 40px; line-height: 1.05; letter-spa
 .links { display: flex; flex-wrap: wrap; gap: 8px 22px; font-weight: 500; }
 .contact-mark { flex: 0 1 96px; min-width: 64px; min-height: 64px; }
 
+/* TEDx */
+.hero-tedx { display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; padding: 20px 24px; text-decoration: none; }
+.hero-tedx .label { font-size: 11px; }
+.hero-tedx .go { font-weight: 900; font-size: 26px; line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase; }
+.hero-tedx:hover .go { text-decoration: underline; text-decoration-thickness: 4px; text-underline-offset: 0.12em; }
+.tedx-media { flex: 3 1 560px; }
+.video { position: relative; aspect-ratio: 16 / 9; background: var(--line); overflow: hidden; }
+.video > a, .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+.video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.play { position: absolute; left: 0; bottom: 0; width: 96px; height: 96px; background: var(--red); }
+.play::after { content: ""; position: absolute; left: 36px; top: 28px; border-style: solid; border-width: 20px 0 20px 32px; border-color: transparent transparent transparent var(--on-colour); }
+.video > a:hover .play { background: var(--blue); }
+.video > a:focus-visible { outline: 6px solid var(--yellow); outline-offset: -6px; }
+.tedx-media .yellow { flex: 1 1 auto; min-height: 48px; }
+.tedx-text { flex: 2 1 340px; }
+.tedx-text blockquote { margin: 0; font-size: 22px; line-height: 1.35; font-weight: 500; }
+.transcript-text { display: flex; flex-direction: column; gap: 12px; padding-top: 14px; font-size: 15px; }
+
 /* Phones: decorative columns turn into horizontal strips so no plane sits alone in a narrow column */
 @media (max-width: 640px) {
   .hero-text { min-height: 0; }
@@ -232,6 +264,12 @@ h3 { margin: 0; font-weight: 900; font-size: 40px; line-height: 1.05; letter-spa
   .hero-side .plain { flex: 1 1 0; }
   .about-mark, .contact-mark { height: 36px; }
   .hero-red { flex-basis: 64px; }
+  .hero-tedx { flex-basis: auto; padding: 16px 20px; }
+  .hero-tedx .go { font-size: 22px; }
+  .play { width: 64px; height: 64px; }
+  .play::after { left: 24px; top: 18px; border-width: 14px 0 14px 22px; }
+  .tedx-media .yellow { min-height: 36px; }
+  .tedx-text blockquote { font-size: 19px; }
   .book-cover { min-height: 0; }
   .invite { min-height: 140px; font-size: 30px; }
   .talks-side .plain { display: none; }
@@ -265,6 +303,7 @@ h3 { margin: 0; font-weight: 900; font-size: 40px; line-height: 1.05; letter-spa
         <nav class="jump" aria-label="On this page">
           <a href="#about">About</a>
           <a href="#book">Book</a>
+          <a href="#tedx">TEDx</a>
           <a href="#talks">Talks</a>
           <a href="#ventures">Ventures</a>
           <a href="#media">Media</a>
@@ -276,7 +315,7 @@ h3 { margin: 0; font-weight: 900; font-size: 40px; line-height: 1.05; letter-spa
       <div class="portrait-frame">
         <img class="portrait" fetchpriority="high" src="portrait.jpg" width="600" height="750" alt="Portrait of Dmitrii Ilenkov">
       </div>
-      <div class="red hero-red"></div>
+      <a class="red hero-red hero-tedx" href="#tedx"><span class="label">TEDxSavski Venac · 10 min</span><span class="go">Watch my TEDx talk</span></a>
     </div>
     <div class="stack hero-side" aria-hidden="true">
       <div class="yellow"></div>
@@ -292,7 +331,7 @@ h3 { margin: 0; font-weight: 900; font-size: 40px; line-height: 1.05; letter-spa
         <h2 id="h-about">About</h2>
         <p class="lead">Knowledge is my biggest passion, and I'm lucky to run a business built around gaining, creating and sharing it.</p>
         <p>My online school, pmclub, has helped more than 30,000 project and product managers sharpen their skills. We teach a minimalist approach to management, and in April 2026 my wife and I put it into a book, <cite>Keep It Simple! Project Management with P3.express</cite> (RU). It has already sold 3,000 print copies.</p>
-        <p>In October 2026 I spoke at TEDxSavski Venac with the talk “P3.express Method: Keep It Simple, Make It Big”.</p>
+        <p>In October 2026 I spoke at TEDxSavski Venac with the talk “<a href="#tedx">Project management: keep it simple</a>”.</p>
         <p>Get in touch if you'd like to talk about the book or invite me onto a podcast or a stage.</p>
         <p>Outside work, I'm learning Esperanto and playing chess. I write by hand whenever I can, love doodling and read plenty of fiction. I live in Belgrade with my wife, Valeria, who is also my business partner and co-author, and our three cats. The cats do nothing all day, but they're cute, and I love them too.</p>
       </div>
@@ -334,10 +373,63 @@ h3 { margin: 0; font-weight: 900; font-size: 40px; line-height: 1.05; letter-spa
         <div class="row">
           <div class="cell yellow rights">
             <p class="label">Rights</p>
-            <p>English and all translation rights are available directly from the authors. Publishers and literary agents, please <a href="mailto:dmitrii@ilenkov.com?subject=Rights%3A%20Keep%20It%20Simple!">email about rights</a>.</p>
+            <p>English and all translation rights are available directly from the authors. Publishers and literary agents, please <a href="mailto:dmitrii@ilenkov.com?subject=Rights%3A%20Keep%20It%20Simple!">email about rights</a>. The idea behind the book in 10 minutes: <a href="#tedx">my TEDx talk</a>.</p>
           </div>
           <div class="plain rights-pad" aria-hidden="true"></div>
         </div>
+      </div>
+    </section>
+
+    <section class="row" id="tedx" aria-labelledby="h-tedx">
+      <div class="stack tedx-media">
+        <div class="video">
+          <a class="video-start" href="https://www.youtube.com/watch?v=ykUEA_ve8R8" data-id="ykUEA_ve8R8" aria-label="Play the TEDx talk “Project management: keep it simple”, 10 minutes">
+            <img src="https://i.ytimg.com/vi/ykUEA_ve8R8/maxresdefault.jpg" width="1280" height="720" alt="" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="yellow" aria-hidden="true"></div>
+      </div>
+      <div class="cell tedx-text">
+        <h2 id="h-tedx">TEDx talk</h2>
+        <h3>Project management: keep it simple</h3>
+        <p class="meta"><span>TEDxSavski Venac, Belgrade</span><span>October 2026</span><span>10 min</span><span>In English</span></p>
+        <p>Project management is not a privilege and not a cult. It is a skill everyone needs, like reading. In this talk I explain why, and walk through the P3.express method in three minutes.</p>
+        <blockquote>“Project management is not a privilege, and project management is not a cult. Project management is a skill.”</blockquote>
+        <p><a href="https://www.youtube.com/watch?v=ykUEA_ve8R8">Watch on YouTube</a></p>
+        <details class="more transcript">
+          <summary><span class="when-closed">Read the transcript</span><span class="when-open">Hide the transcript</span></summary>
+          <div class="transcript-text">
+              <p>Are you afraid of aging? I am. To be honest, it's my biggest fear. I'm just 39, and I'm already taking pills. Last month, I had two moles removed from my back. The biopsy showed one of them was turning into cancer. And way too fast.</p>
+              <p>What's next? Glasses? Sure. Gray hair? Absolutely. A walking stick? Most likely I will carry a walking stick — I had knee issues as a kid. A walking stick, glasses, gray hair — I will be a classic gentleman, right?</p>
+              <p>Unfortunately, this is not how aging works. You lose muscles. Your bones become fragile. You can't jump high, you can't run high, you can't see well, you can't hear well. Your immune system weakens. You become vulnerable. At some point, another seasonal flu might be the end of you.</p>
+              <p>But that's not the worst part. Your mind, your brain — it fails you too. Your memories fade. One day you look at your loved one, and you don't recognize them.</p>
+              <p>Aging hurts.</p>
+              <p>Good news: scientists all over the world are working really hard on longevity issues, and some of them say they're pretty close. They say they can postpone aging significantly and give us decades of happy, healthy life. They just need time. Some ten more years. I can wait ten more years — that definitely works for me. But my mom... she's 78 now. You see, the clock is ticking. Those scientists — they'd better hurry.</p>
+              <p>Bad news: they won't be on time. They never are.</p>
+              <p>But don't blame scientists. It's not just them. Do you know Sagrada Família? That big, beautiful church in Barcelona, Catalonia. They started building it in 1882. Still not finished. Can you imagine?</p>
+              <p>But what about you? How many of your projects — I mean any projects you were involved with — went ahead of schedule and under the budget? Let's be honest. Let's be honest: we don't manage projects well.</p>
+              <p>But how come? Don't we have all those project management guides and standards, certifications and associations? Yes, we do. And I've been a part of this. For more than 15 years I've been managing projects, lecturing project management, leading a project management community and contributing to one of the most popular project management standards. So now I have to admit it: we've been working so hard on developing project management profession that accidentally we created a cult.</p>
+              <p>Jokes aside, we have everything now. We have titles and guilds. We have artifacts and rituals. We have spell books and runes. We do have runes, can you believe it? How else can you call all those acronyms: CV and EV, SPI and CPI, EVM and BRM, RACI and DACI? It's exhausting.</p>
+              <p>And the paperwork, the paperwork! All those plans and reports, charts and boards. Do you think project managers enjoy filling them in? Trust me, they don't.</p>
+              <p>But it's not project managers who suffer most. It's all of us. A baker trying to open a pastry shop in your neighborhood. A freelancer who never met a deadline. That lovely couple next door organizing their wedding. And yes, those scientists working on our cure, too. What we have now is a small, privileged group who manage projects and who know how to do it, and a vast majority of us who also manage projects but have no clue how to do it right.</p>
+              <p>Which reminds me of literacy. Can you read? Of course you can. Most likely, 100 years ago you couldn't. Yet another hundred years back, only one in ten people could read. The scribes could, the priests, the aristocracy, the bourgeois. All the rest? Back off, peasants! Today it sounds both outrageous and ridiculous, and I believe the same is right for project management.</p>
+              <p>Project management is not a privilege, and project management is not a cult. Project management is a skill — a skill essential for all of us. But to make it accessible, we need a different approach. We need an approach easy to learn and easy to use.</p>
+              <p>I found that approach. It is called P3.express method.</p>
+              <p>P3.express is minimalist, which means the manual is so thin you can actually read it in one go. P3.express is open source and free. It is available under a Creative Commons license — you can do anything you want with it. And it is available in more than 30 languages: Ukrainian and Slovak, Chinese and Arabic. And all the translations are done by volunteers, just like you and me. For example, I translated it into Russian, and my friend Faith Alfred is translating it into Yoruba at the moment.</p>
+              <p>And P3.express is universal. I've seen it applied in banks and NGOs, in construction and tech companies. But most importantly, P3.express is simple and straightforward.</p>
+              <p>Have you played Lego? As a kid I loved Lego, really. You open that big box, and it is full of tiny pieces and just one thin manual. You follow the manual, you try not to step on the pieces, and voilà — your beautiful spaceship is ready. Mine was Star Wars. That's exactly what we need for project management.</p>
+              <p>And now I will explain to you how P3.express works in a nutshell. Normally it takes more time — I wrote a whole book about it — but this time it will take only three minutes. Let's go!</p>
+              <p>First, you gather a team to see if you really need that project. You know what? Most likely you don't. I'm sorry to break it to you, but most of your projects simply drain resources and never bring anything back. P3.express makes sure that you cut the waste out and focus on the precious few that you really need.</p>
+              <p>And if that project is the one, you move on, executing it in cycles. You know what cycles are, exactly. You wake up in the morning, you go to bed at night — they call it a day, a daily cycle. You go to work on Monday, and you go for a weekend on Friday — they call it a week, a weekly cycle. Cycles are great. You never need to decide when to brush your teeth. Just do it in the morning, do it in the evening, and you'll be just fine.</p>
+              <p>By the way, while I was rehearsing, my wife Lera told me now they recommend brushing teeth after every single meal. Can you believe that?</p>
+              <p>Anyway, P3.express has cycles. We have monthly cycles to refine the plans, weekly cycles to review the progress, and daily cycles to manage risks.</p>
+              <p>And when everything is ready and you come to project closure, P3.express suggests a set of steps to make everything right: to properly close the project, to hand over the product to the customer after double-checking everything. You know, that's it. Now, "that's it," I could tell you, but P3.express insists on going the extra mile. You keep measuring project benefits and looking for opportunities to maximize them.</p>
+              <p>For example, at this point the scientists — if... honestly, I prefer saying when — the scientists, when they save us from that misery of aging, well, they might go for the Nobel Prize at least, right?</p>
+              <p>And now that's it — that was P3.express, introduced to you in just three minutes. So now it is your move. You can either enjoy this privilege all on your own, or you can spread the word about P3.express. Share these ideas and make this world a better place.</p>
+              <p>Thank you so much.</p>
+          </div>
+        </details>
       </div>
     </section>
 
@@ -345,10 +437,11 @@ h3 { margin: 0; font-weight: 900; font-size: 40px; line-height: 1.05; letter-spa
       <div class="cell talks-text">
         <h2 id="h-talks">Talks</h2>
         <p>Keynotes, in-house talks and workshops. In English or Russian, in person or online.</p>
+        <p>Topics: simple project management with P3.express, the Nearly Universal Principles of Projects (NUPP), team dynamics and cognitive biases. See me on stage in <a href="#tedx">my TEDx talk</a>.</p>
         <p class="label">Selected stages</p>
         <div>
           <ol class="log" reversed>
-            <li><span class="yr">2026</span><span class="what"><span class="ev">TEDx Savski Venac, Belgrade</span>P3.express Method: Keep It Simple, Make It Big · <span>video coming soon</span></span></li>
+            <li><span class="yr">2026</span><span class="what"><span class="ev">TEDxSavski Venac, Belgrade</span><a href="https://www.youtube.com/watch?v=ykUEA_ve8R8">Project management: keep it simple</a></span></li>
             <li><span class="yr">2026</span><span class="what"><span class="ev">School 21, Samarkand</span>NUPP: 6 principles for careers and projects</span></li>
             <li><span class="yr">2026</span><span class="what"><span class="ev">New Zeon, Baku</span>Launching P3.express in an IT team</span></li>
             <li><span class="yr">2025</span><span class="what"><span class="ev">Agile: Scale &amp; Innovation, Tashkent</span>Managing projects with P3.express</span></li>
@@ -442,6 +535,20 @@ h3 { margin: 0; font-weight: 900; font-size: 40px; line-height: 1.05; letter-spa
   </footer>
 
 </div>
+
+<script>
+document.querySelectorAll('.video-start').forEach(function (link) {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube.com/embed/' + link.dataset.id + '?autoplay=1&rel=0';
+    f.title = 'Project management: keep it simple | Dmitrii Ilenkov | TEDxSavski Venac';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    link.replaceWith(f);
+  });
+});
+</script>
 
 </body>
 </html>
